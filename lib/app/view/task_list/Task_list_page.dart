@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+
+class TaskListPage extends StatefulWidget {
+  const TaskListPage({super.key});
+
+  @override
+  State<TaskListPage> createState() => _TaskListPage();
+}
+
+class _TaskListPage extends State<TaskListPage> {
+  int count = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Task List'),
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.of(context).pop();
+          },
+          child: const Center(child: Text('Atras')),
+        ),
+      ),
+      body: Center(child: Text('Hola, contador : $count')),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            count++;
+          });
+        },
+        child: const Icon(Icons.add),
+      ),
+    );
+  }
+}
