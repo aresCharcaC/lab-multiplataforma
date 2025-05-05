@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:lab4_1/app/view/components/h1.dart';
+import 'package:lab4_1/app/view/components/shape.dart';
 
-class TaskListPage extends StatefulWidget {
+class TaskListPage extends StatelessWidget {
   const TaskListPage({super.key});
 
-  @override
-  State<TaskListPage> createState() => _TaskListPage();
-}
-
-class _TaskListPage extends State<TaskListPage> {
-  int count = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,17 +14,42 @@ class _TaskListPage extends State<TaskListPage> {
           onTap: () {
             Navigator.of(context).pop();
           },
-          child: const Center(child: Text('Atras')),
+          child: const Center(child: Text('Atrás')),
         ),
       ),
-      body: Center(child: Text('Hola, contador : $count')),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: double.infinity,
+            color: Theme.of(context).colorScheme.primary,
+            child: Column(
+              children: [
+                const Row(children: [Shape()]),
+                Column(
+                  children: [
+                    Image.asset(
+                      'assets/images/tasks-list-image.png',
+                      width: 120,
+                      height: 120,
+                    ),
+                    const SizedBox(height: 16),
+                    const H1('Completa tus tareas', color: Colors.white),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 25),
+            child: H1('Tareas'),
+          ),
+        ],
+      ),
+
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            count++;
-          });
-        },
-        child: const Icon(Icons.add),
+        onPressed: () {},
+        child: const Icon(Icons.add, size: 50),
       ),
     );
   }

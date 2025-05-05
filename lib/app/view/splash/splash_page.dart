@@ -11,12 +11,14 @@ class SplashPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          const Row(children: [Shape()]),
+          // En lugar de usar Row que puede causar problemas de restricciones
+          const Shape(), // Usar Shape directamente
           const SizedBox(height: 79),
           Image.asset(
             'assets/images/onboarding-image.png',
             width: 180,
             height: 168,
+            fit: BoxFit.contain,
           ),
           const SizedBox(height: 99),
           const H1('Lista de tareas'),
@@ -36,6 +38,7 @@ class SplashPage extends StatelessWidget {
               child: const Text(
                 'La mejor forma para que no se te olvide nada es anotarlo. Guardar tus tareas y ve completando poco a poco para aumentar tu productividad',
                 textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 14, height: 1.5),
               ),
             ),
           ),
