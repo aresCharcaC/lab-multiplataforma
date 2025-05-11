@@ -6,11 +6,10 @@ class Shape extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // En lugar de double.infinity, usamos MediaQuery para obtener el ancho de la pantalla
       width: MediaQuery.of(context).size.width,
-      height: 120,
+      height: 80, // Reducido de 120 a 80 para mejor proporción
       decoration: const BoxDecoration(
-        color: Colors.white,
+        color: Colors.red,
         borderRadius: BorderRadius.only(bottomLeft: Radius.circular(35)),
       ),
     );

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class H1 extends StatelessWidget {
   final String text;
-  final Color? color; // Color opcional que permite personalización
+  final Color? color;
 
   const H1(this.text, {super.key, this.color});
 
@@ -11,14 +11,13 @@ class H1 extends StatelessWidget {
     return Text(
       text,
       style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-        fontSize: 18, // Tamaño adecuado para un encabezado H1
-        fontWeight:
-            FontWeight.w600, // Peso de fuente semi-negrita para destacar
-        color: color, // Usar el color pasado o el predeterminado del tema
+        fontSize: 20, // Aumentado de 18 a 20
+        fontWeight: FontWeight.w600,
+        color: color,
+        letterSpacing: 0.5, // Mejor espaciado entre letras
       ),
-      overflow:
-          TextOverflow.ellipsis, // Previene desbordamiento de texto con '...'
-      maxLines: 2, // Limita a 2 líneas para mantener un diseño compacto
+      overflow: TextOverflow.ellipsis,
+      maxLines: 2,
     );
   }
 }

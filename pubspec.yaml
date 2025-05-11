@@ -29,6 +29,7 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/tasks-list-image.png
 
   fonts:
     - family: Poppins
